@@ -4,6 +4,7 @@
 
 # Tech Stack
 - Angular 10
+- ngx-bootstrap 6.1.0
 -
 
 # Features
