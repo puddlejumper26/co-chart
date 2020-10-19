@@ -1,1 +1,10 @@
-<p>home works!</p>
+<div class="jumbotron bg-white text-center">
+    <h1 class="display-4">Covid-19 Real Time Tracker</h1>
+    <hr>
+
+    <app-dashboard-card [totalConfirmed]='totalConfirmed'
+     [totalActive] = 'totalActive'
+     [totalDeaths] = 'totalDeaths'
+     [totalRecovered] = 'totalRecovered'
+    ></app-dashboard-card>
+</div>

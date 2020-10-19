@@ -1,1 +1,19 @@
-<p>countries works!</p>
+<div class="jumbotron bg-white text-center">
+    <h1 class="display-4">Covid-19 Real Time Countries</h1>
+    <hr>
+
+    <div class="mx-auto">
+        <div class="formgroup col-lg-5 mx-auto">
+            <label for="country">Select Country</label>
+            <select name="" class="form-control" id="country" #input (change)='updateValues(input.value)'>
+                <option value="country" *ngFor='let country of countries' >{{country}}</option>
+            </select>
+        </div>
+    </div>
+
+    <app-dashboard-card [totalConfirmed]='totalConfirmed'
+    [totalActive] = 'totalActive'
+    [totalDeaths] = 'totalDeaths'
+    [totalRecovered] = 'totalRecovered'
+   ></app-dashboard-card>
+</div>
