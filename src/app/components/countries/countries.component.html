@@ -6,14 +6,16 @@
         <div class="formgroup col-lg-5 mx-auto">
             <label for="country">Select Country</label>
             <select name="" class="form-control" id="country" #input (change)='updateValues(input.value)'>
-                <option value="country" *ngFor='let country of countries' >{{country}}</option>
+                <option value="{{country}}" *ngFor='let country of countries' >{{country}}</option>
             </select>
         </div>
     </div>
 
-    <app-dashboard-card [totalConfirmed]='totalConfirmed'
-    [totalActive] = 'totalActive'
-    [totalDeaths] = 'totalDeaths'
-    [totalRecovered] = 'totalRecovered'
-   ></app-dashboard-card>
+    <app-dashboard-card [totalConfirmed] = 'totalConfirmed'
+        [totalActive] = 'totalActive'
+        [totalDeaths] = 'totalDeaths'
+        [totalRecovered] = 'totalRecovered' ></app-dashboard-card>
+
+
+
 </div>
