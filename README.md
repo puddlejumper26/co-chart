@@ -1,6 +1,10 @@
 <h1 align='center'>Covid-19 Tracker</h1>
 
 # Description
+This APP is to track the real time data of Covid-19 
+
+# 
+![20201026_200759](https://user-images.githubusercontent.com/40550117/97217218-3892af00-17c7-11eb-893e-45daf4101821.gif)
 
 # Tech Stack
 - Angular 10
