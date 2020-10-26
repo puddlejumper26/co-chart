@@ -7,6 +7,7 @@
 - ngx-bootstrap 6.1.0
 - ng2-semantic-ui
 - ng2-google charts 6.1.0
+- angular-google-charts 1.1.6
 
 # RegExp
 - regexr.com
@@ -21,4 +22,4 @@
 - Semantic Statistichttps://semantic-ui.com/views/statistic.html
 - ngx-bootstrap https://valor-software.com/ngx-bootstrap/#/documentation
 - ng2-google-charts https://www.npmjs.com/package/ng2-google-charts https://www.devrandom.it/software/ng2-google-charts/additional-documentation/usage.html
--
+- angular-google.charts https://www.npmjs.com/package/angular-google-charts

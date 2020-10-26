@@ -1,3 +1,4 @@
+import { DateWiseData } from './../models/date-wise-data';
 import { GlobalDataSummary } from './../models/global-data';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class DataServiceService {
 
-  private globalDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/10-18-2020.csv`;
+  private globalDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/10-24-2020.csv`;
   private dateWiseDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv`;
 
   constructor( private http: HttpClient) { }
@@ -18,10 +19,11 @@ export class DataServiceService {
       map(result => {
 
         let rows = result.split('\n');
+        let mainData = {};
         let header = rows[0];
         let dates = header.split(/,(?=\S)/);
         dates.splice(0,4);
-        console.log(dates);
+        // console.log(dates);
 
         // remove the first row
         rows.splice(0,1);
@@ -30,11 +32,20 @@ export class DataServiceService {
           let cols = row.split(/,(?=\S)/);
           let con = cols[1];
           cols.splice(0,4);
-          console.log(con, cols);
 
+          mainData[con] = [];
+          // console.log(con, cols);
+          cols.forEach((value, index)=>{
+            let dw: DateWiseData = {
+              cases: +value,
+              country: con,
+              date: new Date(Date.parse(dates[index]))
+            }
+            mainData[con].push(dw)
+          })
+          // console.log(mainData);
         })
-
-        return result;
+        return mainData;
       })
     );
   }

@@ -1,3 +1,8 @@
+<!-- loading running logo -->
+<div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+</div>
+
 <div class="jumbotron bg-white text-center">
     <h1 class="display-4">Covid-19 Real Time Countries</h1>
     <hr>
@@ -17,5 +22,31 @@
         [totalRecovered] = 'totalRecovered' ></app-dashboard-card>
 
 
+    <!-- Insert the talbe -->
+    <div class="row">
 
+        <table class="col">
+            <thead>
+                <tr>
+                    <th>Sno.</th>
+                    <th>Date</th>
+                    <th>Cases</th>
+                    <!-- <th>New Cases</th> -->
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor = 'let cs of selectedCountryData; index as i' >
+                    <td>{{i+1}}</td>
+                    <td>{{cs.date | date}}</td>
+                    <td>{{cs.cases}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+         <!-- insert the line-chart -->
+         <!-- <div class="col">
+             <google-chart [type]='chart.LineChart' style="width: 100%;" [options]='chart.options' [height]='chart.height' [data]='dataTable'></google-chart>
+        </div> -->
+    </div>
 </div>
